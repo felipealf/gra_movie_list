@@ -69,6 +69,7 @@ Esta API RESTful permite acessar informações sobre os indicados e vencedores n
    ```sh
    npm test
    ```
+   - Agora qualquer alteração em arquivos da pasta `src/data/` será validada.
 
 ## Observações
 - O banco de dados é criado em memória, então os dados são perdidos ao reiniciar a aplicação.
