@@ -51,11 +51,21 @@ Esta API RESTful permite acessar informações sobre os indicados e vencedores n
    - Obter produtores com maior/menor intervalo: `GET http://localhost:3000/producers/intervals`
 
 ## Como Executar os Testes
-1. **Instale Mocha globalmente (se necessário):**
+1. **Inicie a API (garanta que os arquivos com o conteúdo padrão estão na pasta `src/data/`):**
+   ```sh
+   npm start
+   ```
+2. **Em um terminal sepadado, instale Mocha globalmente (se necessário):**
    ```sh
    npm install -g mocha
    ```
-2. **Execute os testes:**
+3. **Execute os comandos abaixo para que os arquivos de comparação sejam criados:**
+   ```sh
+   curl -X GET http://localhost:3000/movies -H "Content-Type: application/json" -o test/expected_movies.json
+   curl -X GET http://localhost:3000/producers/intervals -H "Content-Type: application/json" -o test/expected_producers.json
+   ```
+   - A partir desses arquivos que o próximo comando irá comparar as integrações.
+4. **Execute os testes:**
    ```sh
    npm test
    ```
